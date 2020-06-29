@@ -1,0 +1,21 @@
+.recipe {
+    background-color: #FFEC73;
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 10px;
+  
+    .recipeTitle {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      align-items: center;
+      &:after {
+        content: "";
+        height: 2px;
+        width: 100%;
+        background: #ccc;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }

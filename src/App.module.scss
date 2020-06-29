@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  
+  aside {
+    max-width: 250px;
+  }
+  
+  
+  .mainContainer {
+    height: 100vh;
+    overflow-y: scroll;
+    flex-grow: 1;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  .main {
+    flex-direction: column;
+  }
+}
+
+
