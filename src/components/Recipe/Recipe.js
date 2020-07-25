@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { deleteRecipeAction } from '../../redux'
+import { deleteRecipeAction } from '../../store/actions/recipe'
 import classes from './Recipe.module.scss'
 
 
@@ -19,7 +19,9 @@ const Recipe = ({ recipe }) => {
             </div>
             <div className="recipe-ingredients">
                 <h3>Ingredients:</h3>
-                <p>{recipe.ingredients}</p>
+                <pre>
+                    {recipe.ingredients}
+                </pre>
             </div>
  
         </div>

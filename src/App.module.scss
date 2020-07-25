@@ -1,22 +1,33 @@
 .main {
   display: flex;
-  
+
   aside {
-    max-width: 250px;
+    width: 250px;
   }
-  
-  
+    
   .mainContainer {
     height: 100vh;
     overflow-y: scroll;
     flex-grow: 1;
   }
-
 }
 
 @media screen and (max-width: 900px) {
   .main {
     flex-direction: column;
+    aside {
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      max-width: 100%;
+      width: 100%;
+      z-index: 1;
+      height: 150px;
+      background-color: red;
+    }
+    .mainContainer {
+      margin-top: 150px;
+    }
   }
 }
 
