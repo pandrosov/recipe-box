@@ -5,9 +5,9 @@ import classes from './App.module.scss'
 import Navbar from './components/Navbar/Navbar';
 import Layout from './components/hoc/Layout';
 import RecipeList from './components/RecipeList/RecipeList'
-import Home from './pages/Home/Home';
+import Home from './pages/Home';
 import UpdateRecipe from './pages/UpdateRecipe/UpdateRecipe';
-import AddRecipe from './pages/AddRecipe/AddRecipe';
+import AddRecipe from './pages/AddRecipe';
 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
           <Route exact path="/edit/:id" component={UpdateRecipe}/>
         </Switch>
       </Layout>
-      <p >To top</p>
+
     </div>
 
 

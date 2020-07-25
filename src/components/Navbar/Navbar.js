@@ -11,9 +11,6 @@ const Navbar = () => {
                 <li>
                     <NavLink to="/">Go to home page</NavLink> 
                 </li>
-                <li>
-                    <NavLink to="/edit/3">Go to update page</NavLink>    
-                </li> 
             </ul>
         </div>
     );
