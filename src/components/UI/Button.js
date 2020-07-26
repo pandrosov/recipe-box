@@ -2,10 +2,10 @@ import React from 'react';
 
 
 
-const Button = (props) => {
+const Button = ({type, children, onClick}) => {
     return (
         <div>
-            <button type={props.type}>{props.children}</button>
+            <button onClick={onClick} type={type}>{children}</button>
         </div>
     );
 }

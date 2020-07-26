@@ -6,7 +6,8 @@ const handlers = {
   DEFAULT: state => state
 }  
 
-const alertReducer = (state, action) => {
+
+const alertReducer = (state = null, action) => {
   const handler = handlers[action.type] || handlers.DEFAULT
   return handler(state,action)
 }

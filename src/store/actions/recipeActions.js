@@ -3,7 +3,7 @@ import {
     UPDATE_RECIPE,
     DELETE_RECIPE, 
     DELETE_ALL
-} from './actionTypes'
+} from './actionsTypes'
 
 export const addRecipeAction = ( recipe ) => ({
     type: ADD_RECIPE,

@@ -4,7 +4,7 @@ import {
     UPDATE_RECIPE,
     DELETE_RECIPE, 
     DELETE_ALL
-} from '../actions/actionTypes'
+} from '../actions/actionsTypes'
 
 
 const initialState = {

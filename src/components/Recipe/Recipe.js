@@ -1,12 +1,18 @@
 import React from 'react';
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { deleteRecipeAction } from '../../store/actions/recipe'
+import { deleteRecipeAction } from '../../store/actions/recipeActions'
+import { showAlert, hideAlert } from '../../store/actions/alertActions'
 import classes from './Recipe.module.scss'
 
 
 const Recipe = ({ recipe }) => {
     const dispatch = useDispatch()
+    function deleteRecipe(recipe) {
+       dispatch(deleteRecipeAction(recipe.id))
+       dispatch(showAlert('danger', `removing item ${recipe.title} is done`))
+       setTimeout(() => dispatch(hideAlert()), 5000)
+    }
 
     return (
         <div className={classes.recipe}>
@@ -14,7 +20,7 @@ const Recipe = ({ recipe }) => {
                 <h2>{recipe.title}</h2>
                 <div className="btn-group">
                     <Link to={`/edit/${recipe.id}`} >Редактировать</Link>
-                    <button onClick={() => dispatch(deleteRecipeAction(recipe.id))}>Remove</button>
+                    <button onClick={()=> deleteRecipe(recipe)}>Remove</button>
                 </div>
             </div>
             <div className="recipe-ingredients">
