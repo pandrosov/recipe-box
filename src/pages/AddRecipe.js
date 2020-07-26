@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid'
 import { useDispatch } from 'react-redux';
-import { addRecipeAction } from '../store/actions/recipe'
-import LayoutForm from '../components/UI/Form/LayoutForm'
+import { addRecipeAction } from '../store/actions/recipeActions'
+import LayoutForm from '../components/UI/LayoutForm'
+
 
 const AddRecipe = () => {
     const [recipe, setRecipe] = useState({ id: '', title: '', ingredients: '' })

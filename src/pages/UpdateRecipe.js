@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { updateRecipeAction } from '../store/actions/recipe'
+import { updateRecipeAction } from '../store/actions/recipeActions'
 import { useSelector, useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid'
-import LayoutForm from '../components/UI/Form/LayoutForm';
+import LayoutForm from '../components/UI/LayoutForm';
 import PropTypes from 'prop-types'
 
 const UpdateRecipe = (props) => {
