@@ -1,10 +1,19 @@
 import React from 'react';
+import styled, { css } from 'styled-components'
 
-const Layout = (props) => {
+const LayoutStyle = styled.div`
+    ${props => props.className ? css`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    ` : null}
+`
+
+const Layout = ({ className, children }) => {
     return (
-        <div className={props.className}>
-            {props.children}
-        </div>
+        <LayoutStyle className={className}>
+            {children}
+        </LayoutStyle>
     );
 }
 

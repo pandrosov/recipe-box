@@ -3,22 +3,27 @@ import { useSelector, useDispatch } from 'react-redux'
 import { hideAlert } from '../../store/actions/alertActions'
 import styled, {keyframes} from 'styled-components'
 
-
 const breatheAnimation = keyframes`
- 0% { right: -10px; opacity: 0}
- 100% { right: 10px; opacity: 1; }`
+ 0% { right: -1vw; opacity: 0}
+ 100% { right: 5vw; opacity: 1; }`
 
 const AlertStyle = styled.div`
     position: fixed;
-    right: 10px;
+    right: 5vw;
     bottom: 40px;
+    padding: 10px;
     z-index: 1;
-    padding: 20px;
     background-color: #f44336; /* Red */
     color: white;
     animation-name: ${breatheAnimation};
     animation-duration: .7s;
     animation-iteration-count: ease-in-out;
+
+    & {
+        @media (max-width: 768px) {
+            width: 250px;
+        }
+    }
 
 `
 const CloseBtn = styled.span`
@@ -51,7 +56,7 @@ const Alert = () => {
     return (
         <AlertStyle isOpen={isOpen} type={alert.type}>
             <CloseBtn onClick={() => dispatch(hideAlert())}>&times;</CloseBtn>
-            {alert.text}
+            <p>{alert.text}</p>
         </AlertStyle>
     )
 }
