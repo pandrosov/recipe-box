@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { updateRecipeAction } from '../store/actions/recipeActions'
+import React, { useState, useCallback } from 'react';
+import { updateRecipeAction } from '../../store/actions/recipeActions'
 import { useSelector, useDispatch } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid'
-import LayoutForm from '../components/UI/LayoutForm';
+import LayoutForm from '../../components/UI/LayoutForm';
 import PropTypes from 'prop-types'
 
 const UpdateRecipe = (props) => {
@@ -12,33 +11,35 @@ const UpdateRecipe = (props) => {
     const [recipe, setRecipe] = useState(recipeFromState[0])
     const dispatch = useDispatch()
 
+    const handler = useCallback((recipe) => {
+        dispatch(updateRecipeAction(recipe))
+    }, [ dispatch ])
+
+
     const inputHandler = e => {
         const value = e.target.value
         const name = e.target.name
-        if(!recipe.id)
-            setRecipe(state => ({...state, id: uuidv4()}))
+
         setRecipe(state => ({...state, [name]: value}))
     }
 
-    const addRecipe = (e) => {
+    function addRecipe(e) {
         e.preventDefault()
-        if(recipe.title === '') {
-            return
-        }
-        dispatch(updateRecipeAction(recipe))
+        console.log(id)
+        handler(recipe)
         setRecipe({ id: '', title: '', ingredients: '' })
     }
-
+                            
     return (
-        <div>
-            <h1>{id}</h1>
+        <>
+            <h1>{ recipe.title }</h1>
             <LayoutForm 
-                onSubmit={addRecipe}
+                onSubmit={(e)  => addRecipe(e)}
                 onChange={inputHandler}
                 title={recipe.title}
                 ingredients={recipe.ingredients}
             />
-        </div>
+        </>
     );
 }
 

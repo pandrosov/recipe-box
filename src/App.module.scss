@@ -1,33 +1,44 @@
+@import "./styles/var.scss";
+
 .main {
   display: flex;
   position: relative;
+  box-sizing: border-box;
+  padding: $padding;
+  height: $height;
 
-  aside {
-    min-width: 250px;
-  }
-    
   .mainContainer {
-    height: 100vh;
-    overflow-y: scroll;
     flex-grow: 1;
-  }
-}
+    overflow-y: scroll;
+    background-color: #a092de;
+    padding-left: 75px;
+    border-radius: 0 $borderRadius $borderRadius 0px;
 
-@media screen and (max-width: 900px) {
-  .main {
-    flex-direction: column;
-    aside {
-      display: flex;
-      justify-content: space-between;
-      position: fixed;
-      max-width: 100%;
-      width: 100%;
-      z-index: 1;
-      height: 150px;
-      background-color: red;
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 7px;
     }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+      background-color: rgb(255, 236, 115);
+      -webkit-box-shadow: 0 0 1px rgba(240, 191, 30, 0.5);
+    }
+
+  }
+
+  @media screen and (max-width: $tablet) {
+      height: 100vh;
+      padding: 0;
+      .mainContainer {
+        border-radius: 0;
+      }
+  }
+
+
+  @media screen and (max-width: 970px) {
     .mainContainer {
-      margin-top: 150px;
+      padding-left: 0;
     }
   }
 }

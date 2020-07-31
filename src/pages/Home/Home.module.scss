@@ -1,0 +1,17 @@
+.recipes {
+    flex-grow: 1;
+    width: 100%;
+
+    .homeMessage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20vh;
+        
+        .homeMessageTitle {
+            text-align: center;
+        }
+    }
+}
+

@@ -8,8 +8,13 @@ const RecipeList = () => {
 
     return (
         <div className={classes.recipesList}>
+            <h1>Recipe List:</h1>
             <ul>
-                {recipes.map((recipe) => <li key={recipe.id}>{recipe.title}</li>)}
+                {recipes.length !== 0 ?
+                    recipes.map((recipe) => <li className={classes.recipeListItem} key={recipe.id}>{recipe.title}</li>)
+                    :
+                    (<p>Recipe list is empty</p>)
+                }
             </ul>
         </div>
     );

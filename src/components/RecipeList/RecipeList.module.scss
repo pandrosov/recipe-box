@@ -1,8 +1,17 @@
-.recipesList {
+ul {
+    padding: 0;
+
 }
 
-@media screen and (max-width: 900px) {
-    .recipesList {
-        overflow-y: scroll;
-    }
+.recipesList {
+    text-align: center;
 }
+
+  
+  .recipeListItem {
+      padding: 10px;
+      background: #FFEC73;
+      margin: 5px;
+      max-width: 250px;
+      overflow-wrap: break-word;
+  }
